@@ -1,13 +1,12 @@
 title: wu-kan # 站点标题
 description: | # 头像背后的信息（html格式），<br/>代表换行
-  SYSU超算17级在读<br/>
-  永远喜欢水野爱<br/>
-  田宫例四驱车<br/>
+  软件工程硕士在读<br/>
+  末流211<br/>
   ASC<br/>
-  <a href="mailto:i@wu-kan.cn">
+  <a href="mailto:techquincyhu@163.com">
     <i class="fas fa-envelope"></i>
   </a>
-  <a href="https://github.com/wu-kan">
+  <a href="https://github.com/techquincyhu?tab=repositories">
     <i class="fab fa-github"></i>
   </a>
   <a href="https://codeforces.com/profile/WuK">
@@ -28,7 +27,7 @@ description: | # 头像背后的信息（html格式），<br/>代表换行
     marginwidth="0"
     marginheight="0"
   ></iframe>
-url: https://wu-kan.cn # 你的域名，例如 https://wu-kan.github.io
+url: https://techquincyhu.github.io/ # 你的域名，例如 https://wu-kan.github.io
 baseurl: "" # 假如你的博客是建在某个目录下的，请在这里加上目录名，并且下面配置的所有链接里的`/assets`前也要加，即`/your_baseurl/assets`。这一项结尾不要有'/'。
 
 defaults: # 将所有配置选项使用<https://jekyllrb.com/docs/configuration/front-matter-defaults/>功能进行配置
@@ -61,7 +60,7 @@ defaults: # 将所有配置选项使用<https://jekyllrb.com/docs/configuration/
             - | # 网站小图标，可换成你自己的图片，改href中的部分即可
               <link
                 rel="apple-touch-icon-precomposed"
-                href="https://gravatar.loli.net/avatar/289efba375d63424de3c49569c446744?s=320"
+                href="https://avatars.githubusercontent.com/u/70137460?s=400&u=55a124ddae203353a61b0d20ae19567330a1c66b&v=4"
               />
               <link
                 rel="shortcut
@@ -415,14 +414,14 @@ defaults: # 将所有配置选项使用<https://jekyllrb.com/docs/configuration/
                 <div>
                   <i class="fas fa-info-circle fa-fw"></i>
                   <a href="http://beian.miit.gov.cn">
-                    粤ICP备 20024947号
+                    备案信息xxx
                   </a>
                 </div>
               - | # 公安网备信息
                 <div>
                   <img src="http://www.beian.gov.cn/img/new/gongan.png" class="fa-fw"></img>
                   <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=34070202000407">
-                    皖公网安备 34070202000407号
+                   公安网备信息
                   </a>
                 </div>
             wordcount: # 全站字数统计
