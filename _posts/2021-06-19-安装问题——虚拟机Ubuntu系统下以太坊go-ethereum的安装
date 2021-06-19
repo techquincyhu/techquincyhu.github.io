@@ -1,0 +1,81 @@
+# 介绍：
+根据官方文档使用以下指令安装：
+
+`sudo apt-get install software-properties-common`
+`sudo add-apt-repository -y ppa:ethereum/ethereum`
+`sudo apt-get update`
+`sudo apt-get install ethereum`
+
+官方地址： https://github.com/ethereum/go-ethereum/wiki/Installation-Instructions-for-Ubuntu 
+
+## BUG与解决方案:
+
+首先第二行代码出现了
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20210414235052330.png)
+
+
+
+无法添加PPA的错误：
+
+查阅资料得知一般是两种问题：
+
+1. CA证书已经损坏
+
+   对应重装CA证书：
+
+   `sudo apt-get install --reinstall ca-certificates`
+
+2.  没有绕过代理
+
+   选择绕过代理：
+
+   `sudo -E add-apt-repository --update ppa:ubuntu-toolchain-r/test`
+
+接着在第三句出错
+
+`sudo apt-get update`
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20210414235132306.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RlY2hKaW5n,size_16,color_FFFFFF,t_70)
+
+
+
+输入指令：
+
+ `$ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 6ED91CA3AC1160CD` 
+
+依旧报错
+
+安装aptitude 来安装ethereum 
+
+ `aptitude install ethereum` 
+
+ ---aptitude （Debian系统的包管理工具） 与 apt-get 一样，是 Debian 及其衍生系统中功能极其强大的包管理[工具](https://baike.baidu.com/item/工具/81891)。与 apt-get 不同的是，aptitude在处理依赖问题上更佳一些。举例来说，aptitude在删除一个包时，会同时删除本身所依赖的包。这样，系统中不会残留无用的包，整个系统更为干净。 (百度百科)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20210414235151499.png)
+
+
+提示没有root权限
+
+设置root权限：
+
+ `sudo passwd root`
+
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20210414235206607.png)
+
+设置密码，然后切换到 root 权限：
+
+`su root`
+
+输入密码后可以切换到root权限。
+
+继续使用aptitude 来安装ethereum：
+
+`aptitude install ethereum` 
+
+root权限。
+
+继续使用aptitude 来安装ethereum：
+
+`aptitude install ethereum` 
+
+安装成功！！！
