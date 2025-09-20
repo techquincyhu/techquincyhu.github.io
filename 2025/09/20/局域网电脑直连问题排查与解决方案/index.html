@@ -16,24 +16,24 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="John Doe">
+  <meta name="author" content="techquincyhu">
   <meta name="keywords" content="">
   
     <meta name="description" content="局域网电脑直连问题排查与最终解决方案总结1. 初始目标将一台外网电脑（A）与一台内网电脑（B）通过网线直接相连，构建一个独立的、隔离的局域网（192.168.66.x 网段），以便A电脑上运行的服务（如 python -m http.server）能被B电脑访问。 2. 核心障碍与最终诊断 核心障碍：内网电脑B的网络配置被IT策略或安全软件锁定，无法通过图形界面或命令行成功修改其IP地址。它被强制">
 <meta property="og:type" content="article">
 <meta property="og:title" content="局域网电脑直连问题排查与最终解决方案总结">
-<meta property="og:url" content="http://example.com/2025/09/20/%E5%B1%80%E5%9F%9F%E7%BD%91%E7%94%B5%E8%84%91%E7%9B%B4%E8%BF%9E%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:url" content="https://techquincyhu.github.io/2025/09/20/%E5%B1%80%E5%9F%9F%E7%BD%91%E7%94%B5%E8%84%91%E7%9B%B4%E8%BF%9E%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/index.html">
+<meta property="og:site_name" content="Techquincy 的学习笔记">
 <meta property="og:description" content="局域网电脑直连问题排查与最终解决方案总结1. 初始目标将一台外网电脑（A）与一台内网电脑（B）通过网线直接相连，构建一个独立的、隔离的局域网（192.168.66.x 网段），以便A电脑上运行的服务（如 python -m http.server）能被B电脑访问。 2. 核心障碍与最终诊断 核心障碍：内网电脑B的网络配置被IT策略或安全软件锁定，无法通过图形界面或命令行成功修改其IP地址。它被强制">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-09-20T13:02:01.904Z">
 <meta property="article:modified_time" content="2025-09-20T13:00:22.171Z">
-<meta property="article:author" content="John Doe">
+<meta property="article:author" content="techquincyhu">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>局域网电脑直连问题排查与最终解决方案总结 - Hexo</title>
+  <title>局域网电脑直连问题排查与最终解决方案总结 - Techquincy 的学习笔记</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -71,7 +71,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"techquincyhu.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -97,7 +97,7 @@
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
-      <strong>Fluid</strong>
+      <strong>Techquincy 的笔记</strong>
     </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
@@ -347,13 +347,13 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>局域网电脑直连问题排查与最终解决方案总结</div>
-      <div>http://example.com/2025/09/20/局域网电脑直连问题排查与解决方案/</div>
+      <div>https://techquincyhu.github.io/2025/09/20/局域网电脑直连问题排查与解决方案/</div>
     </div>
     <div class="license-meta">
       
         <div class="license-meta-item">
           <div>作者</div>
-          <div>John Doe</div>
+          <div>techquincyhu</div>
         </div>
       
       
