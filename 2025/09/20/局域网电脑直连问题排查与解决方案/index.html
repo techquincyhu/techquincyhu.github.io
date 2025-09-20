@@ -19,21 +19,21 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+    <meta name="description" content="局域网电脑直连问题排查与最终解决方案总结1. 初始目标将一台外网电脑（A）与一台内网电脑（B）通过网线直接相连，构建一个独立的、隔离的局域网（192.168.66.x 网段），以便A电脑上运行的服务（如 python -m http.server）能被B电脑访问。 2. 核心障碍与最终诊断 核心障碍：内网电脑B的网络配置被IT策略或安全软件锁定，无法通过图形界面或命令行成功修改其IP地址。它被强制">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://example.com/2025/09/20/hello-world/index.html">
+<meta property="og:title" content="局域网电脑直连问题排查与最终解决方案总结">
+<meta property="og:url" content="http://example.com/2025/09/20/%E5%B1%80%E5%9F%9F%E7%BD%91%E7%94%B5%E8%84%91%E7%9B%B4%E8%BF%9E%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="局域网电脑直连问题排查与最终解决方案总结1. 初始目标将一台外网电脑（A）与一台内网电脑（B）通过网线直接相连，构建一个独立的、隔离的局域网（192.168.66.x 网段），以便A电脑上运行的服务（如 python -m http.server）能被B电脑访问。 2. 核心障碍与最终诊断 核心障碍：内网电脑B的网络配置被IT策略或安全软件锁定，无法通过图形界面或命令行成功修改其IP地址。它被强制">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-09-20T12:11:54.026Z">
-<meta property="article:modified_time" content="2025-09-20T11:44:32.183Z">
+<meta property="article:published_time" content="2025-09-20T13:02:01.904Z">
+<meta property="article:modified_time" content="2025-09-20T13:00:22.171Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>Hello World - Hexo</title>
+  <title>局域网电脑直连问题排查与最终解决方案总结 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -199,7 +199,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Hello World"></span>
+            <span id="subtitle" data-typed-text="局域网电脑直连问题排查与最终解决方案总结"></span>
           
         </div>
 
@@ -210,7 +210,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-09-20 20:11" pubdate>
+        <time datetime="2025-09-20 21:02" pubdate>
           2025年9月20日 晚上
         </time>
       </span>
@@ -222,7 +222,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          18 字
+          909 字
         
       </span>
     
@@ -233,7 +233,7 @@
         
         
         
-          1 分钟
+          8 分钟
         
       </span>
     
@@ -270,24 +270,65 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Hello World</h1>
+            <h1 id="seo-header">局域网电脑直连问题排查与最终解决方案总结</h1>
             
             
               <div class="markdown-body">
                 
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+                <h3 id="局域网电脑直连问题排查与最终解决方案总结"><a href="#局域网电脑直连问题排查与最终解决方案总结" class="headerlink" title="局域网电脑直连问题排查与最终解决方案总结"></a><strong>局域网电脑直连问题排查与最终解决方案总结</strong></h3><h4 id="1-初始目标"><a href="#1-初始目标" class="headerlink" title="1. 初始目标"></a><strong>1. 初始目标</strong></h4><p>将一台外网电脑（A）与一台内网电脑（B）通过网线直接相连，构建一个独立的、隔离的局域网（<code>192.168.66.x</code> 网段），以便A电脑上运行的服务（如 <code>python -m http.server</code>）能被B电脑访问。</p>
+<h4 id="2-核心障碍与最终诊断"><a href="#2-核心障碍与最终诊断" class="headerlink" title="2. 核心障碍与最终诊断"></a><strong>2. 核心障碍与最终诊断</strong></h4><ul>
+<li><strong>核心障碍</strong>：内网电脑B的网络配置被IT策略或安全软件锁定，<strong>无法通过图形界面或命令行成功修改其IP地址</strong>。它被强制固定在了其原有的 <code>22.x.x.x</code> 网段。</li>
+<li><strong>最终诊断</strong>：所有连接失败的根源，并非A电脑的防火墙或Windows 11的系统Bug，而是<strong>我们无法改变B电脑的网络环境</strong>。因此，所有让B电脑加入新网络的尝试注定会失败。</li>
+</ul>
+<h4 id="3-错误的排查路径回顾（经验教训）"><a href="#3-错误的排查路径回顾（经验教训）" class="headerlink" title="3. 错误的排查路径回顾（经验教训）"></a><strong>3. 错误的排查路径回顾（经验教训）</strong></h4><ol>
+<li><p><strong>假设一：A电脑防火墙问题</strong>。</p>
+<ul>
+<li>现象：B无法 <code>ping</code> 通A。</li>
+<li>尝试：在A电脑上配置防火墙，允许ICMP（Ping）和特定端口通过。</li>
+<li>结果：失败。因为两台电脑当时处于不同的IP网段，数据包根本无法正确路由。</li>
+</ul>
+</li>
+<li><p><strong>假设二：Windows 11 图形界面 (GUI) Bug</strong>。</p>
+<ul>
+<li>现象：在B电脑的GUI中设置静态IP后，<code>ipconfig</code> 显示IP并未改变。</li>
+<li>尝试：使用命令行 <code>netsh</code> 强制修改B电脑的IP地址。</li>
+<li>结果：失败。命令虽然可能执行成功，但系统的底层策略会立刻或在重启后将其覆盖，IP地址依然是 <code>22.x.x.x</code>。</li>
+</ul>
+</li>
+</ol>
+<h4 id="4-正确的解决思路：适应而非对抗-Join-Don’t-Fight"><a href="#4-正确的解决思路：适应而非对抗-Join-Don’t-Fight" class="headerlink" title="4. 正确的解决思路：适应而非对抗 (Join, Don’t Fight)"></a><strong>4. 正确的解决思路：适应而非对抗 (Join, Don’t Fight)</strong></h4><p>既然无法将B电脑拉入我们创建的新网络，那么唯一的正确方法就是<strong>让A电脑主动加入B电脑所在的网络</strong>。</p>
+<h4 id="5-【最终解决方案】操作步骤"><a href="#5-【最终解决方案】操作步骤" class="headerlink" title="5. 【最终解决方案】操作步骤"></a><strong>5. 【最终解决方案】操作步骤</strong></h4><p><strong>目标：让A电脑用于直连的那个网口，获得一个与B电脑同网段的“临时身份”。</strong></p>
+<p><strong>第一步：在B电脑上，获取其网络信息</strong></p>
+<ol>
+<li>在B电脑上打开CMD。</li>
+<li>运行命令 <code>ipconfig</code>。</li>
+<li>记录下其内网以太网适配器的三项关键信息：<ul>
+<li><strong>IPv4 地址</strong>: 例如 <code>22.10.20.55</code></li>
+<li><strong>子网掩码</strong>: 例如 <code>255.255.255.0</code></li>
+<li><strong>默认网关</strong>: 例如 <code>22.10.20.1</code></li>
+</ul>
+</li>
+</ol>
+<p><strong>第二步：在A电脑上，配置静态IP</strong></p>
+<ol>
+<li>使用 <code>Win + R</code> -&gt; <code>ncpa.cpl</code> 打开传统的“网络连接”窗口。</li>
+<li>右键点击用于<strong>直连B电脑的那个以太网适配器</strong>，进入TCP&#x2F;IPv4属性。</li>
+<li>手动填写IP信息：<ul>
+<li><strong>IP 地址</strong>: 设置一个与B电脑同网段、但<strong>未被占用</strong>的地址。例如，如果B是<code>.55</code>，可以选择 **<code>22.10.20.99</code>**。</li>
+<li><strong>子网掩码</strong>: <strong>必须</strong>与B电脑<strong>完全一致</strong>（例如 <code>255.255.255.0</code>）。</li>
+<li><strong>默认网关</strong>: <strong>可以</strong>与B电脑<strong>完全一致</strong>（例如 <code>22.10.20.1</code>）。</li>
+<li><strong>首选 DNS</strong>: 可以留空，或与B电脑填成一样。</li>
+</ul>
+</li>
+<li>点击“确定”保存。</li>
+</ol>
+<p><strong>第三步：验证与访问</strong></p>
+<ol>
+<li><strong>验证连接</strong>：在B电脑上 <code>ping 22.10.20.99</code> (A电脑的新IP)，此时应该可以 Ping 通（前提是A的防火墙允许“公用网络”的ICMP入站）。</li>
+<li><strong>访问服务</strong>：在B电脑的浏览器中，直接访问 <code>http://22.10.20.99:8000</code> 即可成功访问A电脑上的服务。</li>
+</ol>
+<hr>
+<p>这份笔记总结了从错误诊断到最终正确定位问题的全过程，核心经验是：<strong>在处理受控的内网环境时，首先要确认配置是否真正生效，如果无法改变目标设备，就应主动调整自己的设备去适应目标环境。</strong></p>
 
                 
               </div>
@@ -305,8 +346,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Hello World</div>
-      <div>http://example.com/2025/09/20/hello-world/</div>
+      <div>局域网电脑直连问题排查与最终解决方案总结</div>
+      <div>http://example.com/2025/09/20/局域网电脑直连问题排查与解决方案/</div>
     </div>
     <div class="license-meta">
       
@@ -350,9 +391,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/09/20/IDA_Pro_%E7%8E%B0%E4%BB%A3%E5%8C%96_Python_%E7%8E%AF%E5%A2%83%E4%B8%8E_AI_%E8%BE%85%E5%8A%A9%E5%88%86%E6%9E%90%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97/" title="IDA Pro 现代化 Python 环境与 AI 辅助分析配置指南">
+                      <a href="/2025/09/20/%E7%A5%9E%E5%B7%9E%E6%88%98%E7%A5%9E%E7%AC%94%E8%AE%B0%E6%9C%AC_Windows_%E7%B3%BB%E7%BB%9F%E5%B4%A9%E6%BA%83%E4%BF%AE%E5%A4%8D%E5%85%A8%E8%AE%B0%E5%BD%95_(KB5063878_%E9%97%AE%E9%A2%98)/" title="神州战神笔记本_Windows_系统崩溃修复全记录_(KB5063878_问题)">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">IDA Pro 现代化 Python 环境与 AI 辅助分析配置指南</span>
+                        <span class="hidden-mobile">神州战神笔记本_Windows_系统崩溃修复全记录_(KB5063878_问题)</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -360,8 +401,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/09/20/%E8%A7%A3%E5%86%B3VMware%E4%B8%8EWindows%E5%BA%95%E5%B1%82VBS%E8%99%9A%E6%8B%9F%E5%8C%96%E5%86%B2%E7%AA%81%E7%9A%84%E5%AE%9E%E6%88%98%E6%8C%87%E5%8D%97/" title="解决VMware与Windows底层VBS虚拟化冲突的实战指南">
-                        <span class="hidden-mobile">解决VMware与Windows底层VBS虚拟化冲突的实战指南</span>
+                      <a href="/2025/09/20/%E8%A7%A3%E5%86%B3VMware_Ubuntu%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%BA%E7%A9%BA%E9%97%AE%E9%A2%98/" title="【笔记：解决VMware Ubuntu共享文件夹为空问题的关键命令">
+                        <span class="hidden-mobile">【笔记：解决VMware Ubuntu共享文件夹为空问题的关键命令</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

@@ -19,21 +19,23 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+    <meta name="description" content="1. 核心原理：Hypervisor架构与资源独占模型要解决此问题，必须首先理解Windows平台下两种Hypervisor（虚拟机监控程序）的架构差异和资源竞争关系。  **Type-1 Hypervisor (裸金属型)**：  定义：直接运行在物理硬件之上，拥有对硬件资源的最高管理权限。操作系统本身是运行在Hypervisor之上的一个特权分区。 实例：微软的 Hyper-V。当您启用任何">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://example.com/2025/09/20/hello-world/index.html">
+<meta property="og:title" content="解决VMware与Windows底层VBS虚拟化冲突的实战指南">
+<meta property="og:url" content="http://example.com/2025/09/20/%E8%A7%A3%E5%86%B3VMware%E4%B8%8EWindows%E5%BA%95%E5%B1%82VBS%E8%99%9A%E6%8B%9F%E5%8C%96%E5%86%B2%E7%AA%81%E7%9A%84%E5%AE%9E%E6%88%98%E6%8C%87%E5%8D%97/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="1. 核心原理：Hypervisor架构与资源独占模型要解决此问题，必须首先理解Windows平台下两种Hypervisor（虚拟机监控程序）的架构差异和资源竞争关系。  **Type-1 Hypervisor (裸金属型)**：  定义：直接运行在物理硬件之上，拥有对硬件资源的最高管理权限。操作系统本身是运行在Hypervisor之上的一个特权分区。 实例：微软的 Hyper-V。当您启用任何">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-09-20T12:11:54.026Z">
-<meta property="article:modified_time" content="2025-09-20T11:44:32.183Z">
+<meta property="og:image" content="http://example.com/assets/87fabc42-f621-40fe-97c4-42efbfce8708.png">
+<meta property="article:published_time" content="2025-09-20T11:42:26.172Z">
+<meta property="article:modified_time" content="2025-09-20T13:00:20.306Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/assets/87fabc42-f621-40fe-97c4-42efbfce8708.png">
   
   
   
-  <title>Hello World - Hexo</title>
+  <title>解决VMware与Windows底层VBS虚拟化冲突的实战指南 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -199,7 +201,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Hello World"></span>
+            <span id="subtitle" data-typed-text="解决VMware与Windows底层VBS虚拟化冲突的实战指南"></span>
           
         </div>
 
@@ -210,7 +212,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-09-20 20:11" pubdate>
+        <time datetime="2025-09-20 19:42" pubdate>
           2025年9月20日 晚上
         </time>
       </span>
@@ -222,7 +224,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          18 字
+          1.4k 字
         
       </span>
     
@@ -233,7 +235,7 @@
         
         
         
-          1 分钟
+          12 分钟
         
       </span>
     
@@ -270,24 +272,98 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Hello World</h1>
+            <h1 id="seo-header">解决VMware与Windows底层VBS虚拟化冲突的实战指南</h1>
             
             
               <div class="markdown-body">
                 
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
+                <hr>
+<h3 id="1-核心原理：Hypervisor架构与资源独占模型"><a href="#1-核心原理：Hypervisor架构与资源独占模型" class="headerlink" title="1. 核心原理：Hypervisor架构与资源独占模型"></a><strong>1. 核心原理：Hypervisor架构与资源独占模型</strong></h3><p>要解决此问题，必须首先理解Windows平台下两种Hypervisor（虚拟机监控程序）的架构差异和资源竞争关系。</p>
+<ul>
+<li><p>**Type-1 Hypervisor (裸金属型)**：</p>
+<ul>
+<li><strong>定义</strong>：直接运行在物理硬件之上，拥有对硬件资源的最高管理权限。操作系统本身是运行在Hypervisor之上的一个特权分区。</li>
+<li><strong>实例</strong>：微软的 <strong>Hyper-V</strong>。当您启用任何依赖Hyper-V的功能时（如WSL2、Docker Desktop的Hyper-V后端、Windows沙盒），Windows会以Type-1模式启动。</li>
+<li><strong>关键行为</strong>：在系统引导阶段，Type-1 Hypervisor会<strong>取得对CPU硬件虚拟化扩展（Intel VT-x &#x2F; AMD-V）的独占性控制权</strong>。</li>
+</ul>
+</li>
+<li><p>**Type-2 Hypervisor (托管型)**：</p>
+<ul>
+<li><strong>定义</strong>：作为应用程序运行在宿主操作系统（Host OS）之上，通过驱动程序与硬件交互。</li>
+<li><strong>实例</strong>：<strong>VMware Workstation</strong>, <strong>Oracle VirtualBox</strong>。</li>
+<li><strong>关键行为</strong>：为了实现高性能，Type-2 Hypervisor需要向宿主操作系统请求对硬件VT-x的直接访问权限。</li>
+</ul>
+</li>
+</ul>
+<p><strong>根本冲突</strong>：当Windows以Type-1模式启动后，VT-x资源已被Hyper-V独占。此时，VMware（Type-2）的访问请求将被操作系统拒绝，导致其无法使用硬件加速，只能回退到效率极低的二进制翻译（BT）和直接执行（DE）的软件模拟模式，从而引发性能断崖式下跌及“不支持VT-x”的错误。</p>
+<hr>
+<h3 id="2-诊断与排查实录：从表象到根源"><a href="#2-诊断与排查实录：从表象到根源" class="headerlink" title="2. 诊断与排查实录：从表象到根源"></a><strong>2. 诊断与排查实录：从表象到根源</strong></h3><h4 id="2-1-第一阶段：常规缓解措施及其失效原因"><a href="#2-1-第一阶段：常规缓解措施及其失效原因" class="headerlink" title="2.1. 第一阶段：常规缓解措施及其失效原因"></a><strong>2.1. 第一阶段：常规缓解措施及其失效原因</strong></h4><p>我的初始排查遵循了标准流程，但均以失败告终。原因分析如下：</p>
+<ol>
+<li><p><strong>关闭Windows功能</strong>：在“启用或关闭Windows功能”中禁用Hyper-V及相关平台组件。</p>
+<ul>
+<li><p><strong>失效原因</strong>：此操作仅移除了Hyper-V的管理工具和上层服务，但并未禁用其核心的底层——<strong>基于虚拟化的安全（VBS）</strong>。</p>
+<p><img src="/assets/87fabc42-f621-40fe-97c4-42efbfce8708.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+</li>
+<li><p>需要关闭</p>
+</li>
+<li><p><strong>Windows 虚拟机监控程序平台</strong></p>
+</li>
+<li><p><strong>适用于 Linux 的 Windows 子系统</strong></p>
+</li>
+<li><p><strong>虚拟机平台</strong> <strong>(Virtual Machine Platform) - 在你的截图中这一项是未勾选的，请确保它保持未勾选状态。</strong></p>
+</li>
+<li><p><strong>Hyper-V</strong> <strong>- 如果你能看到这一项，也请务必取消勾选。</strong></p>
+</li>
+</ul>
+</li>
+<li><p><strong>使用<code>bcdedit</code>命令</strong>：以管理员权限执行 <code>bcdedit /set hypervisorlaunchtype off</code>。</p>
+<ul>
+<li><strong>失效原因</strong>：VBS的安全策略可以由组策略（Group Policy）或UEFI固件策略强制执行。在这些策略下，<code>hypervisorlaunchtype</code>的设置在系统引导时被更高优先级的安全配置所覆盖，导致命令形同虚设。</li>
+</ul>
+</li>
+</ol>
+<h4 id="2-2-第二阶段：定位并解决根源-VBS的强制禁用"><a href="#2-2-第二阶段：定位并解决根源-VBS的强制禁用" class="headerlink" title="2.2. 第二阶段：定位并解决根源 - VBS的强制禁用"></a><strong>2.2. 第二阶段：定位并解决根源 - VBS的强制禁用</strong></h4><p>在确认常规手段无效后，问题焦点明确指向了VBS。VBS利用一个精简版的Hyper-V内核来创建硬件隔离的安全环境，保护内存完整性（内核隔离）和用户凭据（Credential Guard）。即使主Hyper-V功能关闭，只要VBS被激活，Type-1 Hypervisor就会被加载。</p>
+<p>要禁用这种被策略锁定的VBS，必须使用微软官方提供的工具。</p>
+<p><strong>决定性解决方案：</strong></p>
+<ol>
+<li><p><strong>获取官方工具</strong>：从微软官网下载 <strong>Device Guard and Credential Guard hardware readiness tool</strong>。</p>
+<ul>
+<li><strong>官方链接</strong>：<a target="_blank" rel="noopener" href="https://www.microsoft.com/en-us/download/details.aspx?id=53337">Microsoft Download Center - DG&#x2F;CG Readiness Tool</a></li>
+</ul>
+</li>
+<li><p><strong>执行禁用脚本</strong>：以管理员权限启动PowerShell，导航至脚本目录并执行：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-comment"># 设定执行策略以允许本地脚本运行</span><br><span class="hljs-built_in">Set-ExecutionPolicy</span> Unrestricted <span class="hljs-literal">-Scope</span> <span class="hljs-keyword">Process</span><br><span class="hljs-comment"># 执行禁用命令，并设定完成后自动重启</span><br>.\DG_Readiness_Tool_v3.<span class="hljs-number">6</span>.ps1 <span class="hljs-literal">-Disable</span> <span class="hljs-literal">-AutoReboot</span><br></code></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<ul>
+<li><strong>注意</strong>：脚本执行过程中出现的“找不到注册表项”等错误是正常现象。这表明VBS并非通过常规注册表键值激活，但这不影响脚本执行其核心功能。</li>
+</ul>
+</li>
+<li><p>**物理在场确认 (Physical Presence Test)**：此为禁用VBS的核心安全机制。</p>
+<ul>
+<li><strong>原理</strong>：为防止恶意软件通过脚本静默禁用系统核心安全功能，该脚本会在UEFI启动分区中设置一个临时策略。该策略会中断正常的启动流程，并要求用户进行物理交互来授权此高风险操作。</li>
+<li><strong>操作</strong>：在系统重启过程中，屏幕会显示一个标题为 <code>Virtualization Based Security Opt-out Tool</code> 的文本界面。<strong>必须根据屏幕提示，按下指定的功能键（如F3）来确认禁用VBS。</strong> 此步骤一旦错过，禁用操作将自动中止。</li>
+</ul>
+</li>
+<li><p><strong>验证</strong>：完成物理确认并进入系统后，VBS将被彻底禁用，VT-x资源得到释放。此时启动VMware Workstation，虚拟机将能够正常利用硬件虚拟化，性能恢复正常。</p>
+</li>
+</ol>
+<hr>
+<h3 id="3-可靠的工作模式切换策略"><a href="#3-可靠的工作模式切换策略" class="headerlink" title="3. 可靠的工作模式切换策略"></a><strong>3. 可靠的工作模式切换策略</strong></h3><p>对于需要在VBS&#x2F;WSL2环境与高性能VMware环境之间切换的技术人员，最可靠的方案是使用DGReadiness工具进行“硬切换”，以确保配置的确定性。</p>
+<ul>
+<li><p>**切换至高性能VMware模式 (禁用VBS)**：</p>
+<ol>
+<li>运行 <code>.\DG_Readiness_Tool_v3.6.ps1 -Disable -AutoReboot</code>。</li>
+<li>在重启时<strong>执行物理确认</strong>。</li>
+</ol>
+</li>
+<li><p>**切换至WSL2&#x2F;Docker模式 (启用VBS)**：</p>
+<ol>
+<li>运行 <code>.\DG_Readiness_Tool_v3.6.ps1 -Enable -AutoReboot</code>。</li>
+<li>在重启时根据提示完成操作（如有）。或者，通过“启用或关闭Windows功能”重新勾选<code>虚拟机平台</code>和<code>Windows虚拟机监控程序平台</code>并重启。</li>
+</ol>
+</li>
+</ul>
+<p>此方法虽然需要重启和手动交互，但它直接作用于系统的安全策略层，可以确保每次切换都干净、彻底，避免了因配置残留引发的难以诊断的“玄学”问题，是专业工作环境下的最佳实践。</p>
 
                 
               </div>
@@ -305,8 +381,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Hello World</div>
-      <div>http://example.com/2025/09/20/hello-world/</div>
+      <div>解决VMware与Windows底层VBS虚拟化冲突的实战指南</div>
+      <div>http://example.com/2025/09/20/解决VMware与Windows底层VBS虚拟化冲突的实战指南/</div>
     </div>
     <div class="license-meta">
       
@@ -350,21 +426,15 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/09/20/IDA_Pro_%E7%8E%B0%E4%BB%A3%E5%8C%96_Python_%E7%8E%AF%E5%A2%83%E4%B8%8E_AI_%E8%BE%85%E5%8A%A9%E5%88%86%E6%9E%90%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97/" title="IDA Pro 现代化 Python 环境与 AI 辅助分析配置指南">
+                      <a href="/2025/09/20/hello-world/" title="Hello World">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">IDA Pro 现代化 Python 环境与 AI 辅助分析配置指南</span>
+                        <span class="hidden-mobile">Hello World</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
                   </article>
                   <article class="post-next col-6">
                     
-                    
-                      <a href="/2025/09/20/%E8%A7%A3%E5%86%B3VMware%E4%B8%8EWindows%E5%BA%95%E5%B1%82VBS%E8%99%9A%E6%8B%9F%E5%8C%96%E5%86%B2%E7%AA%81%E7%9A%84%E5%AE%9E%E6%88%98%E6%8C%87%E5%8D%97/" title="解决VMware与Windows底层VBS虚拟化冲突的实战指南">
-                        <span class="hidden-mobile">解决VMware与Windows底层VBS虚拟化冲突的实战指南</span>
-                        <span class="visible-mobile">下一篇</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
                     
                   </article>
                 </div>
